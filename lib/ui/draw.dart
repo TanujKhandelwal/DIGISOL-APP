@@ -36,7 +36,7 @@ class Draw extends StatelessWidget {
             leading: new Icon(Icons.build,color: Colors.red.shade400),
             title: new Text('Service Location'),
 
-              onTap:(){Navigator.push( context, MaterialPageRoute (builder: (context)=>Service()));}
+              onTap:(){ Navigator.push( context, MaterialPageRoute (builder: (context)=>Service()));}
 
 
           ),
