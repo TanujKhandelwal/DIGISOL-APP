@@ -1,105 +1,136 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import './product_details/feature.dart';
 
-class Product extends StatefulWidget {
+class ProductState extends StatelessWidget {
+  final String name;
+  final String desc;
+  final String image;
 
+  ProductState({this.name, this.desc, this.image});
 
-
-  @override
-  _ProductState createState() => _ProductState();
-}
-
-class _ProductState extends State<Product> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(backgroundColor: Colors.black87,
-        appBar: AppBar(title: Text('DG-HR1420 (H/W Ver. A1)',),backgroundColor: Colors.red),
-        body: Container( decoration: BoxDecoration( gradient: LinearGradient(colors: [
-          Colors.indigo[800],
-          Colors.indigo[700],
-          Colors.indigo[600],
-          Colors.indigo[400],
-        ],
-        ),),
-          child: ListView(
-            children: <Widget>[
-              Container(margin:EdgeInsets.all(10),height:200,width:20,decoration:BoxDecoration(shape: BoxShape.rectangle,borderRadius: BorderRadius.circular(20.0),
-                  color: Colors.white,image: DecorationImage(image: AssetImage('images/DG-HR3400-Ver-E1-A-3.png'),
-                  ),),),
-              Container(margin: EdgeInsets.all(10.0),decoration: BoxDecoration(color: Colors.white,shape: BoxShape.rectangle,borderRadius: BorderRadius.circular(20.0)),
-                child: ListTile(
-                  title: Container(child: Text("Description :")),
-                    subtitle: Container(child: Feature(),),
-
-                ),
-              ),
-              Container(margin: EdgeInsets.all(10.0),decoration: BoxDecoration(color: Colors.white,shape: BoxShape.rectangle,borderRadius: BorderRadius.circular(20.0)),
-                child: ListTile(
-                  title: Container(child: Text("Description :")),
-                  subtitle: Container(child: Feature(),),
-
-                ),
-              ),
-              Container(margin: EdgeInsets.all(10.0),decoration: BoxDecoration(color: Colors.white,shape: BoxShape.rectangle,borderRadius: BorderRadius.circular(20.0)),
-                child: ListTile(
-                  title: Container(child: Text("Description :")),
-                  subtitle: Container(child: Feature(),),
-
-                ),
-              ),
-
-              ]
-        ),),
-        bottomNavigationBar: //bottom(),
-        BottomAppBar(
-          color: Colors.red,elevation:10.0,
-          child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-
-          Padding(
-            padding: EdgeInsets.symmetric(vertical: 0.0),
-            child: RaisedButton(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15),
-              ),
-              onPressed: ()=>null,
-              padding: EdgeInsets.all(12),
-              color: Colors.indigo.shade500,
-              child: Text('PDF', style: TextStyle(color: Colors.white)),
+    return Scaffold(
+        backgroundColor: Colors.black87,
+        appBar: AppBar(
+            title: Text(
+              name,
+            ),
+            backgroundColor: Colors.red),
+        body: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Colors.indigo[800],
+                Colors.indigo[700],
+                Colors.indigo[600],
+                Colors.indigo[400],
+              ],
             ),
           ),
+          child: ListView(children: <Widget>[
+            Container(
+              margin: EdgeInsets.all(10),
+              height: 200,
+              width: 20,
+              decoration: BoxDecoration(
+                shape: BoxShape.rectangle,
+                borderRadius: BorderRadius.circular(20.0),
+                color: Colors.white,
+                image: DecorationImage(
+                  image: NetworkImage(image),
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.all(10.0),
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.rectangle,
+                  borderRadius: BorderRadius.circular(20.0)),
+              child: ListTile(
+                title: Container(child: Text("Description :")),
+                subtitle: Container(
+                  child: Text(desc),
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.all(10.0),
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.rectangle,
+                  borderRadius: BorderRadius.circular(20.0)),
+              child: ListTile(
+                title: Container(child: Text("Description :")),
+                subtitle: Container(
+                  child: Text(desc),
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.all(10.0),
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.rectangle,
+                  borderRadius: BorderRadius.circular(20.0)),
+              child: ListTile(
+                title: Container(child: Text("Description :")),
+                subtitle: Container(
+                  child: Text(desc),
+                ),
+              ),
+            ),
+          ]),
+        ),
+        bottomNavigationBar: //bottom(),
+            BottomAppBar(
+          color: Colors.red,
+          elevation: 10.0,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 0.0),
                 child: RaisedButton(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
-                  onPressed: ()=>null,
+                  onPressed: () => null,
                   padding: EdgeInsets.all(12),
                   color: Colors.indigo.shade500,
-                  child: Text('Firmware', style: TextStyle(color: Colors.white)),
+                  child: Text('PDF', style: TextStyle(color: Colors.white)),
                 ),
-              ), Padding(
+              ),
+              Padding(
                 padding: EdgeInsets.symmetric(vertical: 0.0),
                 child: RaisedButton(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
-                  onPressed: ()=>null,
+                  onPressed: () => null,
+                  padding: EdgeInsets.all(12),
+                  color: Colors.indigo.shade500,
+                  child:
+                      Text('Firmware', style: TextStyle(color: Colors.white)),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 0.0),
+                child: RaisedButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  onPressed: () => null,
                   padding: EdgeInsets.all(12),
                   color: Colors.indigo.shade500,
                   child: Text('EDM', style: TextStyle(color: Colors.white)),
-
                 ),
               ),
-
             ],
           ),
-        )
-    );
+        ));
   }
 }
 
@@ -202,45 +233,6 @@ class _ProductState extends State<Product> {
 //    return makeBottom;
 //  }
 //}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //class Mfooter extends StatefulWidget {
 //  @override
