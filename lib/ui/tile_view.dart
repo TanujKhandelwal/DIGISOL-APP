@@ -7,7 +7,7 @@ import './product_page.dart';
 class tile_view extends StatelessWidget{
   String name;
   String des;
-  String imag ='https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500';
+  String imag;
 
   tile_view(this.name,this.des,this.imag);
 
@@ -16,9 +16,9 @@ class tile_view extends StatelessWidget{
 
 
 
-    return FlatButton(
+    return InkWell(
       child: Card(color: Colors.grey.shade100,
-        child: Container(padding: EdgeInsets.only(top: 20.0,bottom: 20.0,right: 0,left: 0),
+        child: Container(padding: EdgeInsets.only(top: 15.0,bottom: 15.0,right: 0,left: 0) ,
             child: Column(
               children: <Widget>[Container(
                 child: ListTile(
@@ -35,8 +35,8 @@ class tile_view extends StatelessWidget{
             )
 
         ),
-      ),onPressed:(){Navigator.push( context, MaterialPageRoute (builder: (context)=>Product()));
-      } ,splashColor: Colors.black,
+      ),onTap:(){Navigator.push( context, MaterialPageRoute (builder: (context)=>Product()));
+      } ,splashColor: Colors.grey,
     );
   }
 }

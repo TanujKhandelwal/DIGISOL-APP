@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Kodeversitas',
+      title: 'Digisol',
       debugShowCheckedModeBanner: false,
       home: LoginPage(),
       routes: routes,

@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget{
     return Scaffold(
       drawer: draw(),
       appBar: new AppBar(title: new Text("PRODUCT"),backgroundColor: Colors.red,),
-      body: Body(),
+      body: buildProductsListPage(),
       floatingActionButton: FloatingActionButton(backgroundColor: Colors.red,
         child: Icon(Icons.search),onPressed: ()=>null,
 
