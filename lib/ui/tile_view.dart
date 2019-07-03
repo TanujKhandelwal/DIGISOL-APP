@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import './product_page.dart';
+import 'package:finale/product_page.dart';
 
 class TileView extends StatelessWidget {
   final String name;
@@ -8,14 +8,21 @@ class TileView extends StatelessWidget {
   final String image;
   final int index;
 
-
   TileView({this.name, this.desc, this.image, this.index});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       child: Card(
-        color: Colors.grey.shade100,
+        margin: EdgeInsets.only(
+          top: 15,
+          right: 10,
+          left: 10,
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
+        color: Colors.grey[200],
         child: Container(
             padding:
                 EdgeInsets.only(top: 15.0, bottom: 15.0, right: 0, left: 0),
@@ -35,7 +42,7 @@ class TileView extends StatelessWidget {
                   ),
                 ),
                 Divider(
-                  color: Colors.grey,
+                  color: Colors.grey[700],
                 ),
                 Container(
                   child: Text(

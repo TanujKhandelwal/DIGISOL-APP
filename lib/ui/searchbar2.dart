@@ -55,11 +55,13 @@ class DataSearch2 extends SearchDelegate<String> {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            Colors.indigo[800],
-            Colors.indigo[700],
-            Colors.indigo[600],
-            Colors.indigo[400],
+            Colors.black87,
+            Colors.black54,
+            Colors.black26,
+            Colors.white24,
           ],
+          begin: Alignment.bottomRight,
+          end: Alignment.topLeft,
         ),
       ),
       child: ListView.builder(
@@ -97,11 +99,13 @@ class DataSearch2 extends SearchDelegate<String> {
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            Colors.indigo[800],
-            Colors.indigo[700],
-            Colors.indigo[600],
-            Colors.indigo[400],
+            Colors.black87,
+            Colors.black54,
+            Colors.black26,
+            Colors.white24,
           ],
+          begin: Alignment.bottomRight,
+          end: Alignment.topLeft,
         ),
       ),
       child: ListView.builder(

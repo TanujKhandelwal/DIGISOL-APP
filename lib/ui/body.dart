@@ -8,11 +8,17 @@ buildProductsListPage() {
     decoration: BoxDecoration(
       gradient: LinearGradient(
         colors: [
-          Colors.indigo[800],
-          Colors.indigo[700],
-          Colors.indigo[600],
-          Colors.indigo[400],
+          Colors.black87,
+          Colors.black54,
+          Colors.black26,
+          Colors.white24,
+//          Colors.indigo[700],
+//          Colors.indigo[500],
+//          Colors.indigo[300],
+//          Colors.indigo[100],
         ],
+        begin: Alignment.bottomRight,
+        end: Alignment.topLeft,
       ),
     ),
     child: ListView.builder(

@@ -10,15 +10,17 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
 
 
-  final formkey = GlobalKey<FormState>();
+  final formKey = GlobalKey<FormState>();
   String _email ;
   String _password ;
 
-void validateAndsave() {
-  final form = formkey.currentState;
+  void validateAndSave() {
+    final form = formKey.currentState;
   if (form.validate()) {
     form.save();
-    if((_email=='tanujkh007@gmail.com')&&(_password=='tanuj'))
+    if ((_email == 'tanujkh007@gmail.com' ||
+        _email == 'maurya.grover@gmail.com') &&
+        (_password == 'tanuj' || _password == 'maurya'))
       Navigator.of(context).pushNamed(HomePage.tag);
 
 }
@@ -67,7 +69,7 @@ void validateAndsave() {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
         ),
-        onPressed: validateAndsave,
+        onPressed: validateAndSave,
           //Navigator.of(context).pushNamed(HomePage.tag);
         padding: EdgeInsets.all(12),
         color: Colors.lightBlueAccent,
@@ -79,7 +81,7 @@ void validateAndsave() {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
-        child: Form(key: formkey,
+        child: Form(key: formKey,
           child: ListView(
             shrinkWrap: true,
             padding: EdgeInsets.only(left: 24.0, right: 24.0),

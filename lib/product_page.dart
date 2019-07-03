@@ -21,11 +21,13 @@ class ProductState extends StatelessWidget {
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                Colors.indigo[800],
-                Colors.indigo[700],
-                Colors.indigo[600],
-                Colors.indigo[400],
+                Colors.white,
+                Colors.white70,
+                Colors.white54,
+                Colors.white10,
               ],
+              end: Alignment.bottomRight,
+              begin: Alignment.topLeft,
             ),
           ),
           child: ListView(children: <Widget>[
@@ -51,7 +53,10 @@ class ProductState extends StatelessWidget {
               child: ListTile(
                 title: Container(child: Text("Description :")),
                 subtitle: Container(
-                  child: Text(desc),
+                  child: Text(
+                    desc,
+                    style: TextStyle(color: Colors.black87),
+                  ),
                 ),
               ),
             ),
@@ -64,7 +69,10 @@ class ProductState extends StatelessWidget {
               child: ListTile(
                 title: Container(child: Text("Description :")),
                 subtitle: Container(
-                  child: Text(desc),
+                  child: Text(
+                    desc,
+                    style: TextStyle(color: Colors.black87),
+                  ),
                 ),
               ),
             ),
@@ -77,7 +85,10 @@ class ProductState extends StatelessWidget {
               child: ListTile(
                 title: Container(child: Text("Description :")),
                 subtitle: Container(
-                  child: Text(desc),
+                  child: Text(
+                    desc,
+                    style: TextStyle(color: Colors.black87),
+                  ),
                 ),
               ),
             ),
@@ -85,7 +96,7 @@ class ProductState extends StatelessWidget {
         ),
         bottomNavigationBar: //bottom(),
             BottomAppBar(
-          color: Colors.red,
+              color: Color.lerp(Colors.white10, Colors.white, 0.6),
           elevation: 10.0,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -99,7 +110,7 @@ class ProductState extends StatelessWidget {
                   ),
                   onPressed: () => null,
                   padding: EdgeInsets.all(12),
-                  color: Colors.indigo.shade500,
+                  color: Colors.red,
                   child: Text('PDF', style: TextStyle(color: Colors.white)),
                 ),
               ),
@@ -111,7 +122,7 @@ class ProductState extends StatelessWidget {
                   ),
                   onPressed: () => null,
                   padding: EdgeInsets.all(12),
-                  color: Colors.indigo.shade500,
+                  color: Colors.red,
                   child:
                       Text('Firmware', style: TextStyle(color: Colors.white)),
                 ),
@@ -124,7 +135,7 @@ class ProductState extends StatelessWidget {
                   ),
                   onPressed: () => null,
                   padding: EdgeInsets.all(12),
-                  color: Colors.indigo.shade500,
+                  color: Colors.red,
                   child: Text('EDM', style: TextStyle(color: Colors.white)),
                 ),
               ),

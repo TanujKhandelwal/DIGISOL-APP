@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Digisol',
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: HomePage(),
       routes: routes,
     );
   }
