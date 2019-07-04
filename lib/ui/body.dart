@@ -28,6 +28,9 @@ buildProductsListPage() {
           desc: info[index]['desc'],
           image: info[index]['image'],
           index: index,
+          usp: info[index]['USP'],
+          feature: info[index]['feature'],
+          detDesc: info[index]['detDesc'],
         );
       },
       itemCount: info.length,
