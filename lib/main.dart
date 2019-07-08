@@ -1,13 +1,13 @@
+import 'package:finale/loading_page.dart';
 import 'package:flutter/material.dart';
 import 'login_page.dart';
-import 'home_page.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   final routes = <String, WidgetBuilder>{
     LoginPage.tag: (context) => LoginPage(),
-    HomePage.tag: (context) => HomePage(),
+    LoadingScreen.tag: (context) => LoadingScreen(),
   };
 
   @override
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Digisol',
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: LoginPage(),
       routes: routes,
     );
   }

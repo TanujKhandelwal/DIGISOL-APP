@@ -3,10 +3,8 @@ import 'product_info.dart';
 import 'tile_view.dart';
 
 class DataSearch2 extends SearchDelegate<String> {
-  final productNames =
-      List<String>.generate(info.length, (index) => info[index]['name']);
-  final recentProducts = ['Ask Thiyagu Sir for suggestions'];
-
+  final ProductItems product;
+  DataSearch2({this.product});
   @override
   List<Widget> buildActions(BuildContext context) {
     // actions for appbar
@@ -37,19 +35,9 @@ class DataSearch2 extends SearchDelegate<String> {
   @override
   Widget buildResults(BuildContext context) {
     // show when someone searches for something
-
     final suggestionList = query.isEmpty
-        ? productNames
-        : productNames.where((p) => p.toLowerCase().startsWith(query)).toList();
-    int getIndex(String test) {
-      int index;
-      for (int i = 0; i < info.length; i++) {
-        if (info[i]['name'] == test) {
-          index = i;
-        }
-      }
-      return index;
-    }
+        ? product.name
+        : product.name.where((p) => p.toLowerCase().startsWith(query)).toList();
 
     return Container(
       decoration: BoxDecoration(
@@ -67,10 +55,13 @@ class DataSearch2 extends SearchDelegate<String> {
       child: ListView.builder(
         itemBuilder: (context, index) {
           return TileView(
-            name: info[getIndex(suggestionList[index])]['name'],
-            desc: info[getIndex(suggestionList[index])]['desc'],
-            image: info[getIndex(suggestionList[index])]['image'],
+            name: product.name[index],
+            desc: product.desc[index],
+            image: product.image[index],
             index: index,
+            usp: product.usp[index],
+            feature: product.feature[index],
+            detDesc: product.detDesc[index],
           );
         },
         itemCount: suggestionList.length,
@@ -81,20 +72,9 @@ class DataSearch2 extends SearchDelegate<String> {
   @override
   Widget buildSuggestions(BuildContext context) {
     // show when someone searches for something
-
     final suggestionList = query.isEmpty
-        ? productNames
-        : productNames.where((p) => p.toLowerCase().startsWith(query)).toList();
-    int getIndex(String test) {
-      int index;
-      for (int i = 0; i < info.length; i++) {
-        if (info[i]['name'] == test) {
-          index = i;
-        }
-      }
-      return index;
-    }
-
+        ? product.name
+        : product.name.where((p) => p.toLowerCase().startsWith(query)).toList();
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
@@ -111,10 +91,13 @@ class DataSearch2 extends SearchDelegate<String> {
       child: ListView.builder(
         itemBuilder: (context, index) {
           return TileView(
-            name: info[getIndex(suggestionList[index])]['name'],
-            desc: info[getIndex(suggestionList[index])]['desc'],
-            image: info[getIndex(suggestionList[index])]['image'],
+            name: product.name[index],
+            desc: product.desc[index],
+            image: product.image[index],
             index: index,
+            usp: product.usp[index],
+            feature: product.feature[index],
+            detDesc: product.detDesc[index],
           );
         },
         itemCount: suggestionList.length,

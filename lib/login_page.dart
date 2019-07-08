@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home_page.dart';
+import 'loading_page.dart';
 
 class LoginPage extends StatefulWidget {
   static String tag = 'login-page';
@@ -21,7 +21,7 @@ class _LoginPageState extends State<LoginPage> {
     if ((_email == 'tanujkh007@gmail.com' ||
         _email == 'maurya.grover@gmail.com') &&
         (_password == 'tanuj' || _password == 'maurya'))
-      Navigator.of(context).pushNamed(HomePage.tag);
+      Navigator.of(context).pushNamed(LoadingScreen.tag);
 
 }
   else {

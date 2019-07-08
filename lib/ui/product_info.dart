@@ -1,3 +1,27 @@
+//import 'package:flutter/material.dart';
+import 'networking.dart';
+
+const String prodLink =
+    'https://www.digisol.com/wp-json/wp/v2/active_networking';
+
+class Product {
+  Future<dynamic> getProductIds() async {
+    NetworkHelper networkHelper = NetworkHelper(prodLink);
+    var prodData = await networkHelper.getData();
+    return prodData;
+  }
+}
+
+class ProductItems {
+  List<String> name;
+  List<String> desc;
+  List<String> detDesc;
+  List<String> image;
+  List<String> usp;
+  List<String> feature;
+  List<int> id;
+}
+
 List info = [
   {
     'name': 'DG-HR1420 (H/W Ver. A1)',
@@ -5,9 +29,12 @@ List info = [
         'DG-HR1420 (H/W Ver. A1) , DIGISOL 150Mbps Wireless Broadband 4G/3G Home Router with USB Port',
     'image':
         'https://www.digisol.com/wp-content/uploads/2019/01/DG-HR1420-Ver1A-2.png',
-    'feature': '1) Up to 150Mbps Wireless Speed\n2) Multiple Wireless modes to select WLAN Operation Mode\n3)Multiple SSID support for multiple Wi-Fi networks\n4)WMM function enhances the multimedia experience on wireless\n5)Better Wi-Fi coverage using High gain Antenna (5dBi)\n6)WAN Failover to 4G/3G\n7)4G Supported\n8)Protect your LAN/WLAN network using Firewall & DoS Protection\n9)URL blocking for Parental control\n10)USB Port for connecting 4G/3G Dongle 11)IPv6 Support\n',
-    'USP': 'DIGISOL DG-HR1420 wireless 4G/3G router has Quick Setup Wizard quickly configures your new wireless router to get you up and running in minutes. Our Setup Wizard shows you step by step installation process to configure your Internet connection, wireless network settings and security.',
-    'detDesc': 'DIGISOL DG-HR1420, IEEE802.11n wireless 4G/3G router provides a better wireless signal for your network than previous-generation IEEE802.11g technology. Upgrading your home network to IEEE802.11n wireless router provides an excellent solution for sharing an Internet resource and files such as video, music, and documents. DG-HR1420 use intelligent antenna technology to transmit multiple streams of data which enables you to receive wireless signals faster at your home. Not only the IEEE802.11n technology extends your wireless range, it also works with previous-generation IEEE802.11b/g wireless devices. The wireless router also includes QoS (Quality of Service) prioritization technology that analyzes and separates multiple data streams based on sensitivity to delay, enabling multiple applications to stream smoothly across your network. DG-HR1420 supports wireless 802.11b/g/n and the following security protocols: WEP, WPA, WPA2.',
+    'feature':
+        '1) Up to 150Mbps Wireless Speed\n2) Multiple Wireless modes to select WLAN Operation Mode\n3)Multiple SSID support for multiple Wi-Fi networks\n4)WMM function enhances the multimedia experience on wireless\n5)Better Wi-Fi coverage using High gain Antenna (5dBi)\n6)WAN Failover to 4G/3G\n7)4G Supported\n8)Protect your LAN/WLAN network using Firewall & DoS Protection\n9)URL blocking for Parental control\n10)USB Port for connecting 4G/3G Dongle 11)IPv6 Support\n',
+    'USP':
+        'DIGISOL DG-HR1420 wireless 4G/3G router has Quick Setup Wizard quickly configures your new wireless router to get you up and running in minutes. Our Setup Wizard shows you step by step installation process to configure your Internet connection, wireless network settings and security.',
+    'detDesc':
+        'DIGISOL DG-HR1420, IEEE802.11n wireless 4G/3G router provides a better wireless signal for your network than previous-generation IEEE802.11g technology. Upgrading your home network to IEEE802.11n wireless router provides an excellent solution for sharing an Internet resource and files such as video, music, and documents. DG-HR1420 use intelligent antenna technology to transmit multiple streams of data which enables you to receive wireless signals faster at your home. Not only the IEEE802.11n technology extends your wireless range, it also works with previous-generation IEEE802.11b/g wireless devices. The wireless router also includes QoS (Quality of Service) prioritization technology that analyzes and separates multiple data streams based on sensitivity to delay, enabling multiple applications to stream smoothly across your network. DG-HR1420 supports wireless 802.11b/g/n and the following security protocols: WEP, WPA, WPA2.',
   },
   {
     'name': 'DG-VG2300N',
