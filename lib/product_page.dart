@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import './ui/product_info.dart';
 
 class ProductState extends StatelessWidget {
+  final ProductItems product;
   final String name;
   final String desc;
   final String image;
@@ -11,7 +13,7 @@ class ProductState extends StatelessWidget {
   final String detDesc;
 
   ProductState(
-      {this.name, this.desc, this.image, this.usp, this.feature, this.detDesc});
+      {this.product, this.name, this.desc, this.image, this.usp, this.feature, this.detDesc});
 
   @override
   Widget build(BuildContext context) {
@@ -68,8 +70,8 @@ class ProductState extends StatelessWidget {
           ),
         ),
         bottomNavigationBar: //bottom(),
-            BottomAppBar(
-              color: Color.lerp(Colors.white10, Colors.white, 0.6),
+        BottomAppBar(
+          color: Color.lerp(Colors.white10, Colors.white, 0.6),
           elevation: 10.0,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -97,7 +99,7 @@ class ProductState extends StatelessWidget {
                   padding: EdgeInsets.all(12),
                   color: Colors.red,
                   child:
-                      Text('Firmware', style: TextStyle(color: Colors.white)),
+                  Text('Firmware', style: TextStyle(color: Colors.white)),
                 ),
               ),
               Padding(

@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:finale/product_page.dart';
+import 'product_info.dart';
 
 class TileView extends StatelessWidget {
+  //final ProductItems product;
   final String name;
   final String desc;
   final String image;
@@ -11,8 +13,13 @@ class TileView extends StatelessWidget {
   final String feature;
   final String detDesc;
 
-  TileView(
-      {this.name, this.desc, this.image, this.index, this.usp, this.feature, this.detDesc});
+  TileView({this.name,
+    this.desc,
+    this.image,
+    this.index,
+    this.usp,
+    this.feature,
+    this.detDesc});
 
   @override
   Widget build(BuildContext context) {

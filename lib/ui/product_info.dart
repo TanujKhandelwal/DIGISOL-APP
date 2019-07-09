@@ -10,6 +10,13 @@ class Product {
     var prodData = await networkHelper.getData();
     return prodData;
   }
+
+  Future<dynamic> getProductData(int id) async {
+    NetworkHelper networkHelper = NetworkHelper('$prodLink/$id');
+    var prodData = await networkHelper.getData();
+    print(prodData);
+    return prodData;
+  }
 }
 
 class ProductItems {

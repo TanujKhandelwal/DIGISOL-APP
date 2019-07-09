@@ -4,7 +4,9 @@ import 'tile_view.dart';
 
 class DataSearch2 extends SearchDelegate<String> {
   final ProductItems product;
+
   DataSearch2({this.product});
+
   @override
   List<Widget> buildActions(BuildContext context) {
     // actions for appbar
