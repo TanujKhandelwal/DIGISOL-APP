@@ -8,18 +8,23 @@ class TileView extends StatelessWidget {
   final String name;
   final String desc;
   final String image;
-  final int index;
-  final String usp;
-  final String feature;
-  final String detDesc;
+  final int id;
 
-  TileView({this.name,
+  //final int index;
+  //final String usp;
+  //final String feature;
+  //final String detDesc;
+
+  TileView({
+    this.name,
     this.desc,
     this.image,
-    this.index,
-    this.usp,
-    this.feature,
-    this.detDesc});
+    this.id,
+    // this.index,
+    ////this.usp,
+    //this.feature,
+    // this.detDesc
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -73,9 +78,9 @@ class TileView extends StatelessWidget {
                   name: name,
                   desc: desc,
                   image: image,
-              feature: feature,
-              detDesc: detDesc,
-              usp: usp,
+              //feature: feature,
+              // detDesc: detDesc,
+              //usp: usp,
                 ),
           ),
         );
