@@ -1,5 +1,6 @@
 import 'package:finale/ui/product_info.dart';
-import 'ui/searchbar2.dart';
+
+//import 'ui/searchbar2.dart';
 import 'package:flutter/material.dart';
 import './ui/draw.dart';
 import './ui/body.dart';
@@ -25,7 +26,7 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         drawer: Draw(),
         appBar: AppBar(
-          title: Text("PRODUCT"),
+          title: Text("Product"),
           backgroundColor: Colors.red,
           actions: <Widget>[
             DropdownButtonHideUnderline(

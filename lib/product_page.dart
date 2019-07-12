@@ -1,27 +1,36 @@
+//import 'package:finale/home_page.dart';
+import 'package:finale/loading_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import './ui/product_info.dart';
 
-class ProductState extends StatelessWidget {
-  final ProductItems product;
-  final String name;
-  final String desc;
-  final String image;
-  final String usp;
-  final String feature;
-  final String detDesc;
+class ProductState extends StatefulWidget {
+  final ProductDetails productID;
 
-  ProductState(
-      {this.product, this.name, this.desc, this.image, this.usp, this.feature, this.detDesc});
+  ProductState({this.productID});
 
+  @override
+  _ProductStateState createState() => _ProductStateState();
+}
+
+class _ProductStateState extends State<ProductState> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.black87,
         appBar: AppBar(
             title: Text(
-              name,
+              widget.productID.name,
+            ),
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoadingScreen()),
+                );
+              },
             ),
             backgroundColor: Colors.red),
         body: Container(
@@ -45,7 +54,7 @@ class ProductState extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: Image(
-                    image: NetworkImage(image),
+                    image: NetworkImage(widget.productID.image),
                   ),
                 ),
                 decoration: BoxDecoration(
@@ -61,9 +70,9 @@ class ProductState extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10.0),
                     color: Colors.white),
                 child: MFooter(
-                  usp: usp,
-                  feature: feature,
-                  detDesc: detDesc,
+                  usp: widget.productID.usp,
+                  feature: widget.productID.feature,
+                  detDesc: widget.productID.desc,
                 ),
               ),
             ],

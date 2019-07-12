@@ -2,6 +2,7 @@ import 'package:finale/loading_page.dart';
 import 'package:flutter/material.dart';
 import 'login_page.dart';
 
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Digisol',
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: LoadingScreen(),
       routes: routes,
     );
   }

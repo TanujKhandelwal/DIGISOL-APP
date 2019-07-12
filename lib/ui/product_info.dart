@@ -22,11 +22,18 @@ class Product {
 class ProductItems {
   List<String> name;
   List<String> desc;
-  List<String> detDesc;
   List<String> image;
-  List<String> usp;
-  List<String> feature;
   List<int> id;
+}
+
+class ProductDetails {
+  String name;
+  String desc;
+  String image;
+
+  //List<String> images;  //use when the links for all images have been generated
+  String usp;
+  String feature;
 }
 
 List info = [

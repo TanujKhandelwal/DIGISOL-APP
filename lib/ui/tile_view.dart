@@ -1,7 +1,9 @@
+import 'package:finale/loading_page2.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:finale/product_page.dart';
-import 'product_info.dart';
+
+//import 'package:finale/product_page.dart';
+//import 'product_info.dart';
 
 class TileView extends StatelessWidget {
   //final ProductItems product;
@@ -10,20 +12,11 @@ class TileView extends StatelessWidget {
   final String image;
   final int id;
 
-  //final int index;
-  //final String usp;
-  //final String feature;
-  //final String detDesc;
-
   TileView({
     this.name,
     this.desc,
     this.image,
     this.id,
-    // this.index,
-    ////this.usp,
-    //this.feature,
-    // this.detDesc
   });
 
   @override
@@ -41,7 +34,7 @@ class TileView extends StatelessWidget {
         color: Colors.grey[200],
         child: Container(
             padding:
-                EdgeInsets.only(top: 15.0, bottom: 15.0, right: 0, left: 0),
+            EdgeInsets.only(top: 15.0, bottom: 15.0, right: 0, left: 0),
             child: Column(
               children: <Widget>[
                 Container(
@@ -53,7 +46,7 @@ class TileView extends StatelessWidget {
                       name,
                       textAlign: TextAlign.center,
                       style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                      TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
@@ -74,13 +67,9 @@ class TileView extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => ProductState(
-                  name: name,
-                  desc: desc,
-                  image: image,
-              //feature: feature,
-              // detDesc: detDesc,
-              //usp: usp,
+            builder: (context) =>
+                LoadingScreen(
+                  id: id,
                 ),
           ),
         );
