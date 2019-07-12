@@ -61,10 +61,6 @@ class DataSearch2 extends SearchDelegate<String> {
             desc: product.desc[index],
             image: product.image[index],
             id: product.id[index],
-            //index: index,
-            //usp: product.usp[index],
-            //feature: product.feature[index],
-            // detDesc: product.detDesc[index],
           );
         },
         itemCount: suggestionList.length,
@@ -98,10 +94,6 @@ class DataSearch2 extends SearchDelegate<String> {
             desc: product.desc[index],
             image: product.image[index],
             id: product.id[index],
-            //index: index,
-            //usp: product.usp[index],
-            //feature: product.feature[index],
-            //detDesc: product.detDesc[index],
           );
         },
         itemCount: suggestionList.length,

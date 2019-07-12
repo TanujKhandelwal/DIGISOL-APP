@@ -1,6 +1,6 @@
 import 'package:finale/ui/product_info.dart';
 
-//import 'ui/searchbar2.dart';
+import 'ui/searchbar2.dart';
 import 'package:flutter/material.dart';
 import './ui/draw.dart';
 import './ui/body.dart';
@@ -76,14 +76,15 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: Colors.red,
           child: Icon(Icons.search),
           onPressed: () {
+            /*
             print(widget.product.name);
             for (int i = 0; i < info.length; i++) {
               print(info[i]['name']);
-            }
-            //            showSearch(
-//              context: context,
-//              delegate: DataSearch2(product: product),
-            //);
+            }*/
+            showSearch(
+              context: context,
+              delegate: DataSearch2(product: widget.product),
+            );
           },
         ),
       ),
